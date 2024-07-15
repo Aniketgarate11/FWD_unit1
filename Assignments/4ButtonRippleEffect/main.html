@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Button Highlight</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aliceblue;
+        }
+        #btn {
+            text-decoration: none;
+            color: black;
+            background-color: pink;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+        #btn span {
+            position: relative;
+            z-index: 1;
+        }
+        #btn::before {
+            position: absolute;
+            content: "";
+            background-color: orangered;
+            height: 0;
+            width: 0;
+            left: var(--xPos);
+            top: var(--yPos);
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            transition: width 0.3s ease, height 0.3s ease, left 0s, top 0s;
+            pointer-events: none;
+        }
+        #btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        #btn:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="btn"><span>Hover me!</span></a>
+    <script>
+        const btnEl = document.getElementById("btn");
+
+        btnEl.addEventListener("mousemove", (e) => {
+            const X = e.pageX - btnEl.offsetLeft;
+            const Y = e.pageY - btnEl.offsetTop;
+
+            btnEl.style.setProperty("--xPos", X + "px");
+            btnEl.style.setProperty("--yPos", Y + "px");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Calendar-Container">
+        <p class="month-name" id="month-name">June</p>
+        <p class="day-name" id="day-name">Sunday</p>
+        <p class="Date" id="Date">13</p>
+        <p class="Year" id="Year">2027</p>
+    </div>
+</body>
+</html>
+<script src="index.js"></script>
+
+
+
+
+
+<!-- Hacking terminal........................................................................ -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Terminal Simulator</title>
+</head>
+<body>
+    <script>
+        // Create the terminal container
+        const terminal = document.createElement('div');
+        document.body.appendChild(terminal);
+
+
+        
+        // Apply styles directly via JavaScript
+        terminal.style.backgroundColor = 'green';
+        terminal.style.color = '#00FF00';
+        terminal.style.fontFamily = 'Courier New, Courier, monospace';
+        terminal.style.padding = '20px';
+        terminal.style.width = '100%';
+        terminal.style.height = '100vh';
+        terminal.style.overflow = 'hidden';
+
+        // Messages to display
+        const messages = [
+            "Initializing Hacking",
+            "Reading your Files",
+            "Password file Detected",
+            "Sending all passwords and personal files to Server",
+            "Cleaning Up"
+        ];
+
+        // Function to generate a random delay between 1 to 5 seconds
+        function getRandomDelay() {
+            return Math.floor(Math.random() * 5000) + 1000;
+        }
+
+        // Function to show messages with blinking dots
+        function showMessage(index) {
+            if (index < messages.length) {
+                const messageElement = document.createElement('div');
+                messageElement.textContent = messages[index];
+
+                const dotsElement = document.createElement('span');
+                dotsElement.textContent = '...';
+                messageElement.appendChild(dotsElement);
+
+                terminal.appendChild(messageElement);
+
+                let dotIndex = 0;
+
+                // Function to blink the dots one by one
+                function blink() {
+                    if (dotIndex < 3) {
+                        dotsElement.textContent = '.'.repeat(dotIndex + 1);
+                        dotIndex++;
+                    } else {
+                        dotIndex = 0;
+                        dotsElement.textContent = '';
+                    }
+                }
+
+                const blinkInterval = setInterval(blink, 500);
+
+                setTimeout(() => {
+                    clearInterval(blinkInterval);
+                    dotsElement.textContent = '...'; // Ensure final state with three dots
+                    index++;
+                    showMessage(index);
+                }, getRandomDelay());
+            }
+        }
+
+        // Start showing messages
+        showMessage(0); -->
+    </script>
+</body>
+</html>
+
