@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/navbar.css">
+</head>
+
+<body>
+
+    <div id="header">
+
+    </div>
+
+    <h1>Electronics Page</h1>
+    <div class="container">
+
+    </div>
+
+</body>
+
+</html>
+<script type="module">
+    import Navbar from "/JSComponents/navbar.js"
+    document.getElementById('header').innerHTML = Navbar(); 
+
+
+    
+    import { getData, appendData } from "/JSScript/Productdata.js";
+    let url = "https://fakestoreapi.com/products/category/electronics";
+    let container = document.querySelector(".container");
+
+    let data = await getData(url);
+    appendData(data, container)
+</script>
+</script>
